@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Curso JQuery</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<h1>Seccion 03</h1>
+		<hr>
+		<button id="genera" class="btn btn-primary">Agregar tabla</button>
+		<br><br>
+		<select name="" id="cmbBase" class="form-control">
+			<option value="3">tabla del 3</option>
+			<option value="4">tabla del 4</option>
+			<option value="5">tabla del 5</option>
+			<option value="6">tabla del 6</option>
+			<option value="7">tabla del 7</option>
+		</select>	
+		<br><br>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th> Numéro</th>
+					<th> X</th>
+					<th> Numéro</th>
+					<th> =</th>
+					<th> Resultado</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+
+	<script>
+		(function(){
+			var siguiente = 0;
+			var resultado = 0;
+			var elem = $(".table tbody");
+			$("#genera").on("click", function(){
+				var tabla= $("select#cmbBase").val();
+				siguiente ++;
+				resultado = tabla * siguiente;
+				var fila = "<tr>"+"<td>"+ tabla +"</td>" + "<td> X </td>" + "<td>"+ siguiente +"</td>" + "<td> = </td>" + "<td>"+ resultado +"</td>" + "</tr>"
+				elem.append(fila);
+			});
+			$("#cmbBase").on("change", function(){
+				$("tr").not(":eq(0)").remove();
+				siguiente=0;
+
+			});
+		})();
+	</script>
+</body>
+</html>
