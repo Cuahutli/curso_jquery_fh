@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Lección 02 - Selectores y Encadenamiento</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+	<!-- Estilo para esta pagina -->
+	<style>
+		
+		img{
+			width: 200px;
+			height: 200px;
+		}
+	
+		hr{
+			margin-bottom: 60px;
+		}
+
+		.morado{
+			color: purple;
+		}
+
+		.rojo{
+			color: red;
+		}
+
+		.azul{
+			color: blue;
+		}
+
+		.verde{
+			color: green;
+		}
+
+		.naranja{
+			color: orange;
+		}
+
+	</style>
+
+</head>
+<body>
+
+
+<div class="container">
+	
+	<h1>Selectores y Encadenamiento</h1>
+	<hr>
+
+	<div class="row">
+		
+		<div class="col-sm-4 text-center">
+			<img src="img/nophoto.jpg" class="img-circle">
+			<h4>Cuahutli Ulloa</h4>
+		</div>
+
+		<div class="col-sm-5">
+			<p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus dicta tempore rem eos minus incidunt, doloribus placeat quas iste dolor deserunt distinctio, facilis, temporibus inventore possimus eum labore quaerat ea?
+			</p>		
+		</div>
+
+		<div class="col-sm-3">
+			<ul>
+				<li>Matemática</li>
+				<li>Programación</li>
+				<li>Análisis</li>
+				<li>Física</li>
+				<li>Geografía</li>
+			</ul>
+		</div>
+
+	</div>
+	
+
+</div>
+
+<script>
+	$(function(){
+		// manejo de las imagenes
+		$('img').attr("src","img/profesor.jpg")
+				.removeClass('img-circle')
+				.addClass('img-thumbnail');
+
+		//console.log($(".col-sm-5").children("P").eq(0));
+		$(".col-sm-5")
+			.find("p")
+			//.text("Saludos soy un <u>catedrático<u> de udemy.");
+			.html("Saludos soy un <u>catedrático</u> de udemy.");
+
+		// $("ul li")
+		// 	.eq(0)
+		// 	.css('color', 'red');
+		$("ul li")
+			.eq(0).addClass('morado').end() // end() lo que permite es regresarme al selector original.
+			.eq(1).addClass('rojo').end()
+			.eq(2).addClass('azul').end()
+			.eq(3).addClass('verde').end()
+			.eq(4).addClass('naranja').end();
+			
+	});
+</script>
+
+
+
+</body>
+</html>
