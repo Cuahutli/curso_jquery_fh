@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Curso JQuery</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<h1>Seccion 03</h1>
+		<hr>
+		<img src="img/1.jpg" alt="jpg" data-color="azul">
+		<img src="img/2.png" alt="png" data-color="blanco">
+
+	</div>
+
+	<script>
+		(function(){
+			var $imagen = $("img");
+			$imagen.on("mouseenter", function(){
+				console.log( $(this).data("color"));
+				console.log( $(this).attr("alt"));
+			});
+		})();
+	</script>
+</body>
+</html>
