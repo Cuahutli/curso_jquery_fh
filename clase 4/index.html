@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .textoVerde{
+            color: green;
+        }
+        .negrita{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Curso de JQuery</h1>
+        <hr>
+        <ul>
+            <li><span class="label-primary">Hola 1</span></li>
+            <li>Hola 2</li>
+            <li>Hola 3</li>
+            <li>Hola 4</li>
+            <li>Hola 5</li>
+        </ul>
+    
+        <ul>
+            <li>Hola 1</li>
+            <li>Hola 2</li>
+            <li>Hola 3</li>
+            <li>Hola 4</li>
+            <li>Hola 5</li>
+        </ul>
+    </div>
+
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $('ul').addClass('textoVerde');
+            $('li:last-child').addClass('negrita');
+        });
+    </script>
+</body>
+</html>
