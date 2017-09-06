@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <style>
+        .textoVerde{
+            color: green;
+        }
+        .negrita{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Hola 1</li>
+        <li>Hola 2</li>
+        <li>Hola 3</li>
+        <li>Hola 4</li>
+        <li>Hola 5</li>
+    </ul>
+
+    <ul>
+            <li>Hola 1</li>
+            <li>Hola 2</li>
+            <li>Hola 3</li>
+            <li>Hola 4</li>
+            <li>Hola 5</li>
+    </ul>
+
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script>
+        //jQuery('ul').css('color','red');
+        jQuery('ul').addClass('textoVerde');
+        jQuery('ul').addClass('negrita');
+    </script>
+</body>
+</html>
