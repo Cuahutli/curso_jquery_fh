@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Curso JQuery</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<h1>Seccion 03</h1>
+		<hr>
+
+		<h3>Click me!!</h3>
+	</div>
+
+	<script>
+		(function(){
+			var contador = 0;
+			// $("h3").on("click", function(){
+				// 	//$("body").append(h3Dinamico); // al final del elemento
+				// 	//$("body").prepend(h3Dinamico); // antes del elemento
+				// 	$(".container").append(h3Dinamico);
+				// });
+				
+				$("body").on("click", "h3", function(){
+					contador ++;
+					var h3Dinamico = "<h3 id='h3-" + contador+ "'>Dinamico: "+ contador + "</h3>"
+
+					$(".container").append(h3Dinamico);
+					if (contador == 3){
+						$("#h3-2").bind("click", function(){
+							console.log("funcion dinámica");
+						});
+					}
+				});
+			// la función bind se usa cuando queremos agregarle una función a un elemento que creamos de forma dinámica.
+		})();
+	</script>
+</body>
+</html>
