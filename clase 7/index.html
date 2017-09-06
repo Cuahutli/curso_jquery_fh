@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Lección 02 - Selectores y Encadenamiento</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<style>
+		.img100{
+			width: 100px;
+			height: 100px;
+		}
+		.divRojo{
+			background-color: red;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+
+</head>
+<body>
+
+
+	<div class="container">
+		
+		<h1>Seccion 03: Eventos</h1>
+		<hr>
+
+		<button id="btn1" class="btn btn-primary">Evento click</button>
+		<br><br>
+		<img src="img/profesor.jpg" alt="" class="img100">
+
+		<br><br>
+		<div class="divRojo"></div>
+		
+		<br><br>
+		<a id="linkUdemy" href="http://udemy.com">ir a Udemy</a>
+
+		<br><br>
+		<a id="linkUdemy" href="http://udemy.com">ir a Udemy</a>
+	</div>
+
+	<script>
+		$('#btn1').on("click", function(){
+			console.log("Me diste click");
+		});
+
+		$('.img100').on('mouseenter', function(){
+			$(this).attr("src","img/nophoto.jpg");
+			console.log("Entró mouse enter");
+		});
+
+		$('.img100').on('mouseleave', function(){
+			$(this).attr("src","img/profesor.jpg");
+			console.log("Salió el mouse");
+		});
+
+		$('.divRojo').on('click', function(){
+			console.log("Click en el divRojo");
+		});
+
+		$("#linkUdemy").on('click', function(e){
+			e.preventDefault(); // previene que el link te redireccione (previene la acción);
+			console.log("click en el link");
+
+			var link = $(this).attr('href');
+			console.log(link);
+			window.location = link;
+		});
+
+		$(document).ready(function(){
+			console.log("la página está lista para lo que sea");
+		});
+	</script>
+</body>
+</html>
