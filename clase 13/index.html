@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Curso JQuery</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<h1>Seccion 03</h1>
+		<hr>
+
+	</div>
+
+	<script>
+		// var caja = "<input type='text' class='form-control' placeholder='Ingrese su nombre'>"
+		// $('.container').append(caja);
+
+		$("<input>",{
+			type: "text",
+			class: "form-control",
+			placeholder:"Ingrese su nombre"
+		})
+			.appendTo('.container')
+			.on('keypress', function(e){
+				console.log(e.keyCode + " - " + e.key);				
+			});
+
+		$('input').css({
+			position: "relative",
+			top: "250px"
+		})
+	</script>
+</body>
+</html>
