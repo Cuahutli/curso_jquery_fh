@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tienda de Ropa</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+
+<div class="container">
+	
+	<h1>Tienda de Ropa: <small>Fernando's</small></h1>
+	<hr>
+
+	<div class="row">
+
+		<div class="col-sm-2">
+		    <section class="panel">
+		        <div id="thumbnails" class="panel-body">				
+		        </div>
+		    </section>
+		</div>
+
+		<div class="col-sm-5">
+		    <section class="panel">
+		        <div class="panel-body">
+					
+					<img id="imgCamiseta">
+
+		        </div>
+		    </section>
+		</div>
+
+		<div class="col-sm-4">
+		    <section class="panel">
+		        <div class="panel-body">
+					<h2>Camiseta Especial <small id="lblColor">blanca</small></h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum provident doloremque ipsam beatae neque quo saepe voluptatibus, sunt hic delectus nam perspiciatis ut atque, minus minima, rem reiciendis dolor harum!.
+						<br>
+						<br>
+					</p>
+					<p>
+						<h4>Rating</h4>
+						<img src="img/star1.png" class="imgRating">
+						<img src="img/star1.png" class="imgRating">
+						<img src="img/star1.png" class="imgRating">
+						<img src="img/star1.png" class="imgRating">
+						<img src="img/star2.png" class="imgRating">
+						<br>
+						<br>
+					</p>
+					<p>
+						<h3>Precio <small>$10</small></h3>
+					</p>
+
+		        </div>
+		    </section>
+		</div>
+
+	</div>
+
+
+</div>
+
+<script>
+	(function(){
+		var playeras ={
+			colores: [
+				"blanca",
+				"gris",
+				"negra",
+				"rojo",
+				"rosa",
+				"verde"
+			],
+			init: function(opciones){
+				$.extend(playeras, opciones);
+				var url="img/camiseta/large/"+ this.colores[0] +".jpg"
+				var $contenedor = $("#thumbnails")
+				for( var i=0; i < this.colores.length; i++){
+					var playera = "<img src='img/camiseta/thumbs/" + this.colores[i] + ".jpg' class='imgThumb img-thumbnail' data-color='" + this.colores[i] + "'>";
+					$contenedor.append(playera);
+				}
+
+				$(".imgThumb").on("mouseenter",function(){	
+					var color = $(this).data('color');
+					$("#lblColor").text(color);
+					var url="img/camiseta/large/"+ color +".jpg"
+					$("#imgCamiseta").attr("src", url);
+				});
+				$("#imgCamiseta").attr("src", url);
+
+			}
+
+		}
+
+		playeras.init();
+	})();
+
+</script>
+
+
+
+
+
+</body>
+</html>
