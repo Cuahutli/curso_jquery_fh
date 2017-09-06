@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Curso JQuery</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<h1>Seccion 03</h1>
+		<hr>
+		<button class="btn btn-primary" id="encender">Encender</button>	
+		<button class="btn btn-danger" id="apagar">Apagar</button>	
+
+	</div>
+
+	<script>
+		var carro = {
+			llantas: 4,
+			puertas: 5,
+			marca: "Toyota",
+			colores: [
+				"Azul",
+				"Blanco",
+				"Rojo",
+				"Negro"
+			],
+			fabricante: {
+				creador: "Toyota",
+				telefono: "35521-3563",
+				direccion: "xyz avenida 123"
+			},
+			encendido: false,
+			arrancar: function(){
+				if(carro.encendido){
+					console.log("El vehículo ya estaba encendido")
+				}else{
+					console.log("El vehículo arrancó");
+					carro.encendido = true;
+				}
+			},
+			apagar: function(){				
+				if(!carro.encendido){
+					console.log("El vehículo ya está apagado");
+				}else{
+					console.log("el vehículo se apagó");
+					carro.encendido = false;
+				}
+			},
+		};
+		console.log(carro);		
+		console.log(carro.colores[0]);
+		console.log(carro.colores.length)
+		console.log(carro.fabricante);
+		
+		$('#encender').on('click', carro.arrancar);
+		$('#apagar').on('click', carro.apagar);
+		
+	</script>
+</body>
+</html>
