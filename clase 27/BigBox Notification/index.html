@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Big Box</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<script src="js/lib/TweenMax.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+
+
+
+<div class="container">
+	
+	<h1>BigBox: <small>Notification</small></h1>
+	<hr>
+	<button class="btn btn-primary">Mostrar BigBox</button>
+
+</div>
+
+<script src="js/bigBox.js"></script>
+<script>
+	$("button").on("click",function(){
+		$.bigBox({
+			fa:"fa-microchip",
+			titulo: "Desde botón",
+			contenido: "Este es el contenido del BigBox",
+			boton: "Ir a Udemy!!"
+		}, function(boton){
+			console.log(boton);
+		});
+	});
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
