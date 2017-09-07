@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Curso JQuery</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-3.2.1.min.js"></script>
+	<script src="js/lib/TweenMax.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div class="container" align="center">
+		
+		<h1>SlideShow</h1>
+		<hr>
+		<!-- div del slide -->
+		<div class="slideShow">
+		</div>
+	</div>
+
+	<script src="js/slideShow.js"></script>
+	<script>
+		$.slideShow({
+			slides: ["img/slide1.png", "img/slide2.png", "img/slide3.png", "img/slide4.png"],
+			intervalo:2000,
+			velocidad:400,
+			colorPuntoActivo: "green",
+			colorPuntoInactivo: "#2ad524",
+		});
+	</script>
+</body>
+</html>
